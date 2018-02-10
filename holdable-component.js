@@ -2,7 +2,6 @@ inventory = []; //global inventory data structure
 
 AFRAME.registerComponent('holdable', {
   schema: {
-  	isHoldable: {type: 'boolean', default: true},
   	id: {type: 'string', default: "Unknown Object"}
   },
   init: function () {
@@ -29,7 +28,6 @@ AFRAME.registerComponent('holdable', {
 			findLocation = function(event) {
 				var newLocation = event.detail.intersection.point;
 				newLocation = newLocation.x + ", 1, " + newLocation.z;
-				console.log(newLocation);
 				element.setAttribute('position', newLocation);
 			}
 			ground.addEventListener('raycaster-intersected', findLocation(event));
